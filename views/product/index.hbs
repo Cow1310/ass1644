@@ -1,0 +1,30 @@
+
+<div action="/product/index" class="container mt-3" style="text-align:center">
+<div class="container-fluid py-5">
+        <div class="container">
+            <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
+                <h1 style="text-align: center;"  class="text-primary mb-3"><span class="fw-light text-dark"></span> Toy Product</h1>
+                <div class="col-12 text-center">
+                    <a href="/product/add" class="btn btn-primary py-2 px-4" href="">Add new product</a>
+                </div>
+                <p class="mb-5"></p>
+            </div>
+
+            <div class="row g-4">
+                {{#each products}}
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="product-item text-center border h-100 p-4">
+                        <img class="img-fluid mb-4" src="{{image}}" alt="">
+                        <a href="/product/detail/{{_id}}" class="h6 d-inline-block mb-2">{{name}}</a>
+                        <h5 class="text-primary mb-3">{{price}}</h5>
+                        <a href="/product/edit/{{_id}}" class="btn btn-outline-primary px-3">Edit</a>
+                        <a href="/product/delete/{{ _id }}" type="submit" class="btn btn-danger" 
+                        onclick="return confirm('Are you sure?')">Delete</a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+
+        </div>
+    </div>   
+</div>
